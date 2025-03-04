@@ -1,0 +1,120 @@
+body {
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    /* Размер шрифта для мобильных устройств */
+
+  }
+}
+
+.header-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 20px 0;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
+}
+
+.gif-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.gif-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.input {
+  border: 2px solid #00000010;
+  border-radius: 5px;
+  padding: 10px;
+  width: 200px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.button {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  background-color: #61bdfb;
+}
+
+
+.dark {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.navbar {
+  background-color: #333333;
+  color: #ffffff;
+  align-items: center;
+  display: flex;
+  border-bottom: 1px solid #ffffff10;
+}
+
+.nav-link {
+  color: #ffffff;
+  /* Цвет ссылок в навбаре */
+}
+
+.nav-link:hover {
+  color: #61bdfb;
+  /* Цвет ссылок при наведении */
+}
+
+.navbar-toggler {
+  border-color: transparent;
+  /* Убираем рамку вокруг кнопки */
+}
+
+.navbar-toggler-icon {
+  filter: brightness(0) invert(1);
+}
+
+.nav-item {
+  margin-left: 40px;
+
+  @media (max-width: 768px) {
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-collapse {
+    background-color: #333333;
+    width: 50%;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    height: 100vh;
+    padding: 10px 10px;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    /* Вертикальное направление */
+  }
+}
