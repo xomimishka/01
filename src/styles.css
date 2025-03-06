@@ -35,6 +35,7 @@ body {
 .gif-container img {
   max-width: 100%;
   height: auto;
+  pointer-events: none;
 }
 
 .light {
@@ -73,6 +74,7 @@ body {
   align-items: center;
   display: flex;
   border-bottom: 1px solid #ffffff10;
+  z-index: 1000;
 }
 
 .nav-link {
@@ -105,16 +107,74 @@ body {
 @media (max-width: 768px) {
   .navbar-collapse {
     background-color: #333333;
-    width: 50%;
+    width: 100%;
     position: absolute;
     right: 0;
     top: 100%;
-    height: 100vh;
     padding: 10px 10px;
-  }
-
-  .navbar-nav {
     flex-direction: column;
-    /* Вертикальное направление */
+    overflow: hidden;
   }
+}
+
+.footer {
+  background-color: #333333;
+  color: #ffffff;
+  margin-top: auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0;
+  border-top: 1px solid #ffffff10;
+}
+
+.bord {
+  background-image: url('ground.jpg');
+  background-size: cover;
+  /* Растягиваем изображение на всю ширину и высоту */
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Не повторяем изображение */
+  width: 100%;
+  /* Занимает всю ширину экрана */
+  height: 100vh;
+  /* Занимает всю высоту экрана */
+  margin: 0;
+  position: relative;
+}
+
+.content {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  /* Сдвигаем на половину ширины контента */
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  /* Тень за текстом */
+  min-width: 300px;
+  padding: 10px;
+
+  @media (max-width: 768px) {
+    min-width: 90%;
+    padding: 10px;
+  }
+}
+
+.like-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  /* Выравнивание по правому краю */
+  margin-top: 20px;
+}
+
+.like-button {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  /* Указатель при наведении */
+  margin-right: 10px;
 }

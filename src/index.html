@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="light">
-    <nav class="navbar navbar-expand-lg">
+<body class="light d-flex flex-column min-vh-100">
+    <header class="navbar navbar-expand-lg">
         <div class="container d-flex justify-content-between align-items-center">
             <a class="navbar-brand" href="#" onclick="showPage('home')">
-                <img src="logo192.svg" style="height: 40px;" alt="Логотип">
+                <img src="like.svg" style="height: 40px;" alt="Логотип">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -29,21 +29,34 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <main class="container mt-4">
+    <main>
         <div id="content">
             <div id="home" class="page">
-                <h1 class="header-title">Главная страница</h1>
+                <div class="bord">
+                    <p class="header-title content" style="color: #ffffff">Я сражу владыку демонов и подарю миру
+                        счастье, тогда будет совсем не важно избранный я герой или нет.
+                </div>
+                <div class="container">
+                <h1 class="header-title" style="color: #61bdfb">Цитата</h1>
                 <br />
                 <div class="gif-container">
                     <img src="tenor01.gif" alt="GIF 1" />
                     <img src="tenor02.gif" alt="GIF 2" />
                 </div><br />
-                <center>Не сдавайся, даже если шансов нет. Потому что только когда ты сдаешься, все шансы исчезают.
-                </center>
+                <center>
+                    <p>Не сдавайся, даже если шансов нет. Потому что только когда ты сдаешься, все шансы исчезают.
+                    </p>
+                </center><br />
+                
+                    <div class="like-button-container">
+                        <img src="heart.svg" alt="Лайк" class="like-button" onclick="incrementLikes()" />
+                        <span id="likeCount">0</span>
+                    </div>
+                </div>
             </div>
-            <div id="about" class="page" style="display: none;">
+            <div id="about" class="container" style="display: none;">
                 <h1 class="header-title">Калькулятор</h1><br />
                 <div class="mb-3 d-flex gif-container">
                     <input type="number" id="num1" class="input" placeholder="Первое число">
@@ -61,6 +74,10 @@
         </div>
         <br />
     </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Название сайта. Все права защищены.</p>
+    </footer>
 
     <script>
         function showPage(page) {
@@ -95,6 +112,12 @@
                     result = 'Неизвестная операция';
             }
             document.getElementById('result').innerText = `${result}`;
+        }
+
+        let likeCount = 0;
+        function incrementLikes() {
+            likeCount++;
+            document.getElementById('likeCount').innerText = likeCount;
         }
     </script>
 </body>
